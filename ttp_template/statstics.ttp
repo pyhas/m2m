@@ -1,0 +1,17 @@
+<group name="apn">
+        name: {{name}}
+</group>
+
+<group name="traffic">
+            rating-group-statistics:
+                rating-group-identifier: {{rg}}
+                uplink-bytes: {{uplink}}
+                downlink-bytes: {{downlink}}
+</group>
+
+<group name="pdp">
+        pdp-context-statistics:
+            ue-count: {{ue_count}}
+            pdn-count: {{pdn}}
+            pdp-active: {{pdp_active}}
+</group>

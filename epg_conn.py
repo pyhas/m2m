@@ -2,7 +2,7 @@ from netmiko import ConnectHandler
 import elements
 from datetime import date, datetime
 from influxdb import InfluxDBClient
-from rich import print
+#from rich import print
 import time
 from concurrent.futures import ThreadPoolExecutor
 
@@ -28,7 +28,7 @@ def getapnstats(elem):
         tags['apn_name'] = apn
         tags['epg'] = elem['hostname']
         command = f'epg pgw apn {apn} statistics'
-        sfp = net_connect.send_command(command, use_ttp=True, ttp_template="ttp_template/statstics.ttp")
+        sfp = net_connect.send_command(command, use_ttp=True, ttp_template="/home/system/scripts/m2m/ttp_template/statstics.ttp")
         for d in sfp[0]:
             down = 0
             up = 0
@@ -70,7 +70,7 @@ def getapnstats5(elem):
         tags['apn_name'] = apn
         tags['epg'] = elem['hostname']
         command = f'epg pgw apn {apn} statistics'
-        sfp = net_connect.send_command(command, use_ttp=True, tp_template="ttp_template/statstics.ttp")
+        sfp = net_connect.send_command(command, use_ttp=True, tp_template="/home/system/scripts/m2m/ttp_template/statstics.ttp")
         for d in sfp[0]:
             down = 0
             up = 0
@@ -123,5 +123,6 @@ for s in apn_stastics1:
 client.write_points(apn_stastics)
 delta = datetime.now() - now
 # print(apn_stastics1, apn_stastics5)
+print(apn_stastics)
 print(delta)
 

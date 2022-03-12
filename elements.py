@@ -39,7 +39,7 @@ elements = [
       "ego",
       "extension",
       "internet",
-      "mms",
+      "mms"
     ]
   },
   {
@@ -274,7 +274,8 @@ elements = [
       "MADINATY",
       "MAPGROUP",
       "MARAI.NET",
-      "MARED.INTERNET  MASADR",
+      "MARED.INTERNET",
+      "MASADR",
       "MKHELF",
       "MS.NET",
       "MUHAJBAGHDAD",
@@ -413,10 +414,11 @@ elements = [
       "ego",
       "extension",
       "getty",
-      "gms.sunrise-networks.com  internet",
+      "gms.sunrise-networks.com",
       "krg.smartgrid",
       "krg.smartgrid2",
       "maliatrack",
+      "internet",
       "mms",
       "zain.iq"
     ]
@@ -461,5 +463,48 @@ elements = [
       "mms",
       "zain.iq"
     ]
+  }
+]
+
+sgsn = [
+  {
+    "hostname": "KIR-SGSN01",
+    "type": "sgsn",
+    "ip": "10.129.33.240"
+  },
+  {
+    "hostname": "RAM-SGSN01",
+    "type": "sgsn",
+    "ip": "172.20.94.232"
+  },
+  {
+    "hostname": "BAS-SGSN01",
+    "type": "sgsn",
+    "ip": "10.128.90.240"
+  },
+  {
+    "hostname": "BISC-SGSN01",
+    "type": "sgsn",
+    "ip": "10.129.50.216"
+  },
+  {
+    "hostname": "DIW-SGSN01",
+    "type": "sgsn",
+    "ip": "10.128.175.60"
+  },
+  {
+    "hostname": "CAMP-SGSN01",
+    "type": "sgsn",
+    "ip": "10.128.151.180"
+  },
+  {
+    "hostname": "ERB-SGSN01",
+    "type": "sgsn",
+    "ip": "172.21.253.136"
+  },
+  {
+    "hostname": "NAJ-SGSN01",
+    "type": "sgsn",
+    "ip": "172.21.187.136"
   }
 ]

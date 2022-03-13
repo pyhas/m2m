@@ -169,7 +169,7 @@ def epgstats(epg):
 for elem in elements.elements:
     epgstats(elem['hostname'])
 
-client.write_points(epg_stats)
+# client.write_points(epg_stats)
 
 delta = datetime.now() - now
 # print(apn_stastics1, apn_stastics5)

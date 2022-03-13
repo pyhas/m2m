@@ -1,0 +1,27 @@
+<group name="kpi">
+    PgwGgsnSubscribers               {{PgwGgsnSubscribers}}         {{remaining | _line_}}
+    GgsnPdpContexts                  {{GgsnPdpContexts}}          {{remaining | _line_}}
+    PgwBearers                       {{PgwBearers}}         {{remaining | _line_}}
+    GgsnCreatePdpCtxFR               {{GgsnCreatePdpCtxFR}}         {{remaining | _line_}}
+    GgsnUpdatePdpCtxFR               {{GgsnUpdatePdpCtxFR}}          {{remaining | _line_}}
+    PgwS5CreateSessionFR             {{PgwS5CreateSessionFR}}          {{remaining | _line_}}
+    PgwS5ModifyBearerFR              {{PgwS5ModifyBearerFR}}          {{remaining | _line_}}
+    PgwGgsnDlThroughput {{unit}}       {{PgwGgsnDlThroughput}}        {{remaining | _line_}}  
+    PgwGgsnUlThroughput {{unit}}       {{PgwGgsnUlThroughput}}         {{remaining | _line_}}        
+    SgwSubscribers                   {{SgwSubscribers}}         {{remaining | _line_}}
+    SgwConnectedSubscribers          {{SgwConnectedSubscribers}}          {{remaining | _line_}}
+    SgwPdnConnections                {{SgwPdnConnections}}         {{remaining | _line_}}
+    SgwBearers                       {{SgwBearers}}         {{remaining | _line_}}
+    SgwS4S11CreateSessionFR          {{SgwS4S11CreateSessionFR}}          {{remaining | _line_}}
+    SgwS4S11ModifyBearerFR           {{SgwS4S11ModifyBearerFR}}          {{remaining | _line_}}
+    SgwS4S11DlDataNotificationFR     {{SgwS4S11DlDataNotificationFR}}          {{remaining | _line_}}
+    SgwDlThroughputS1uS4S12 {{unit}}   {{SgwDlThroughputS1uS4S12}}        {{remaining | _line_}}
+    SgwUlThroughputS5S8 {{unit}}       {{SgwUlThroughputS5S8}}         {{remaining | _line_}} 
+</group>
+
+<group name="cpu">
+    {{board | startswith_re('gc')}}                        {{cpu}}        {{remaining | _line_}} 
+</group>
+<group name="cpu">
+    {{board | startswith_re('gu')}}                        {{cpu}}        {{remaining | _line_}}                       
+</group>

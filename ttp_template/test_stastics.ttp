@@ -1,0 +1,63 @@
+<group name="apn">
+        name: {{name}}
+</group>
+
+<group name="traffic*">
+        uplink{{: | equal(":")}}
+            bytes: {{uplink}}
+</group>
+<group name="traffic*">
+        downlink{{: | equal(":")}}
+            bytes: {{downlink}}
+</group>
+<group name="pdp">
+            ue-count: {{ue_count}}
+            pdn-count: {{pdn}}
+            pdp-active: {{pdp_active}}
+</group>
+
+<group name="gx">
+                gx{{:}}
+                    das-identifier: {{das-identifier}}
+                    ccr-initial-sent: {{ccr-initial-sent}}
+                    ccr-initial-failed: {{ccr-initial-failed}}
+                    ccr-update-sent: {{ccr-update-sent}}
+                    ccr-update-failed: {{ccr-update-failed}}
+                    ccr-termination-sent: {{ccr-termination-sent}}
+                    ccr-termination-failed: {{ccr-termination-failed}}
+                    user-service-denied: {{user-service-denied}}
+                    user-unknown: {{user-unknown}}
+                    authorization-failure: {{authorization-failure}}
+                    authentication-failure: {{authentication-failure}}
+                    unknown-session-id: {{unknown-session-id}}
+                    active-gx-sessions: {{active-gx-sessions}}
+                    pending-transaction-received: {{pending-transaction-received}}
+                    pending-transaction-sent: {{pending-transaction-sent}}
+                    pending-transaction-loop-termination: {{pending-transaction-loop-termination}}
+                    temporarily-offline-sessions: {{temporarily-offline-sessions}}
+                    permanently-offline-sessions: {{permanently-offline-sessions}}
+                    rar-received: {{rar-received}}
+</group>
+
+<group name="gy">
+                gy{{:}}
+                    das-identifier: {{das-identifier}}
+                    ccr-initial-sent: {{ccr-initial-sent}}
+                    ccr-initial-failed: {{ccr-initial-failed}}
+                    ccr-update-sent: {{ccr-update-sent}}
+                    ccr-update-failed: {{ccr-update-failed}}
+                    ccr-termination-sent: {{ccr-termination-sent}}
+                    ccr-termination-failed: {{ccr-termination-failed}}
+                    user-service-denied: {{user-service-denied}}
+                    user-unknown: {{user-unknown}}
+                    authorization-failure: {{authorization-failure}}
+                    authentication-failure: {{authentication-failure}}
+                    unknown-session-id: {{unknown-session-id}}
+                    active-gx-sessions: {{active-gx-sessions}}
+                    pending-transaction-received: {{pending-transaction-received}}
+                    pending-transaction-sent: {{pending-transaction-sent}}
+                    pending-transaction-loop-termination: {{pending-transaction-loop-termination}}
+                    temporarily-offline-sessions: {{temporarily-offline-sessions}}
+                    permanently-offline-sessions: {{permanently-offline-sessions}}
+                    rar-received: {{rar-received}}
+</group>

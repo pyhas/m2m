@@ -2,7 +2,7 @@
         name: {{name}}
 </group>
 
-<group name="traffic">
+<group name="traffic*">
             rating-group-statistics:
                 rating-group-identifier: {{rg}}
                 uplink-bytes: {{uplink}}

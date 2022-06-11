@@ -20,7 +20,7 @@ def sgsnstatus(elem):
         password="Eric@2020",
     )
     command = 'pdc_kpi.pl -l'
-    kpis = net_connect.send_command(command) #, use_ttp=True, ttp_template="/home/system/scripts/m2m/ttp_template/sgsn_kpi.ttp")
+    kpis = net_connect.send_command(command, use_ttp=True, ttp_template="/home/system/scripts/m2m/ttp_template/sgsn_kpi.ttp")
     print(kpis)
     for kpi in kpis[0]:
         try:

@@ -10,10 +10,9 @@ client = InfluxDBClient(host='172.21.164.231', port=8086, username='telegraf', p
 client.switch_database('telegraf')
 
 now = datetime.now()
-measure = 'apn_statistics'
-apn_stastics1 = []
-apn_stastics5 = []
-
+measure = 'free_rg'
+freerg_stat = []
+rgs = [16, 341, 358, 359, 930, 959, 975, 985, 995, 1000]
 
 def getapnstats(elem):
     net_connect = ConnectHandler(
@@ -31,25 +30,23 @@ def getapnstats(elem):
             command = f'epg pgw apn {apn} statistics'
             sfp = net_connect.send_command(command, use_ttp=True, ttp_template="/home/system/scripts/m2m/ttp_template/free_rg.ttp")
             print(sfp)
-            # for d in sfp[0]:
-            #     down = 0
-            #     up = 0
-            #     try:
-            #         fields = {}
-            #         my_dict['measurement'] = measure
-            #         my_dict['tags'] = tags
-            #         for t in d['traffic']:
-            #             down = down + int(t['downlink'])
-            #             up = up + int(t['uplink'])
-            #         fields['downlink'] = down
-            #         fields['uplink'] = up
-            #         fields['pdp'] = d['pdp']['pdp_active']
-            #         fields['pdn'] = d['pdp']['pdn']
-            #         fields['ue'] = d['pdp']['ue_count']
-            #         my_dict['fields'] = fields
-            #         apn_stastics1.append(my_dict)
-                # except Exception as xx: #(KeyError, TypeError):
-                #     print(xx)
+            for d in sfp[0]:
+                print(d)
+                down = 0
+                up = 0
+                try:
+                    fields = {}
+                    my_dict['measurement'] = measure
+                    my_dict['tags'] = tags
+                    for t in d['traffic']:
+                        if t['rg'] in rgs:
+                            fields['downlink'] = int(t['downlink'])
+                            fields['uplink'] = int(t['uplink'])
+                            fields['rg'] = t['rg']
+                        my_dict['fields'] = fields
+                        freerg_stat.append(my_dict)
+                except Exception as xx: #(KeyError, TypeError):
+                    print(xx)
                     # tags['apn_name'] = apn
                     # tags['epg'] = elem['hostname']
                     # my_dict['measurement'] = measure
@@ -68,3 +65,5 @@ def getapnstats(elem):
 
 with ThreadPoolExecutor(max_workers=8) as executor:
     executor.map(getapnstats, [elem for elem in elements_rg.elements])
+
+print(freerg_stat)

@@ -22,7 +22,6 @@ elements = [
     "type": "ggsn",
     "ip": "10.137.40.4",
     "apns": [
-      "A2Z",
        "ego",
       "internet"
     ]
@@ -51,7 +50,6 @@ elements = [
     "ip": "172.20.94.244",
     "apns": [
       "ego",
-      "extension",
       "internet"
     ]
   },

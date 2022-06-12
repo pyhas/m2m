@@ -1,0 +1,6 @@
+<group name="traffic*">
+            rating-group-statistics:
+                rating-group-identifier: {{rg}}
+                uplink-bytes: {{uplink}}
+                downlink-bytes: {{downlink}}
+</group>

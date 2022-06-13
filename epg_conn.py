@@ -30,7 +30,6 @@ def getapnstats(elem):
             tags['epg'] = elem['hostname']
             command = f'epg pgw apn {apn} statistics'
             sfp = net_connect.send_command(command, use_ttp=True, ttp_template="/home/system/scripts/m2m/ttp_template/statstics.ttp")
-            # print(sfp)
             for d in sfp[0]:
                 down = 0
                 up = 0

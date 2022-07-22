@@ -1,0 +1,3 @@
+<group name="apns*">
+epg pgw apn {{apn}}
+</group>

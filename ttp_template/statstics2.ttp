@@ -1,0 +1,16 @@
+<group name="traffic*">
+            rating-group-statistics:
+                rating-group-identifier: {{rg}}
+                uplink-bytes: {{uplink}}
+                downlink-bytes: {{downlink}}
+
+</group>
+
+
+
+<group name="pdp">
+            ue-count: {{ue_count}}
+            pdn-count: {{pdn_count}}
+            pdp-active: {{pdp_active}}
+            eps-active-bearer: {{eps_active_bearer}}
+</group>

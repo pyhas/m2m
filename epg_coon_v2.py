@@ -14,7 +14,7 @@ f = open('elements.json', 'r')
 elements = json.load(f)
 
 now = datetime.now()
-measure = 'apn_statistics_test'
+measure = 'apn_statistics_new'
 apn_stastics1 = []
 apn_stastics5 = []
 
@@ -66,7 +66,6 @@ with ThreadPoolExecutor(max_workers=100) as executor:
     executor.map(getapnstats, [elem for elem in elements])
 
 delta = datetime.now() - now
-# print(delta)
 print(apn_stastics1)
 client.write_points(apn_stastics1)
 print(delta)

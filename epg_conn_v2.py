@@ -1,9 +1,7 @@
 from netmiko import ConnectHandler
-# import test_elements
-from datetime import date, datetime
+from datetime import datetime
 from influxdb import InfluxDBClient
 from rich import print
-import time
 from concurrent.futures import ThreadPoolExecutor
 import json
 
@@ -34,7 +32,7 @@ def getapnstats(elem):
             tags['apn_name'] = apn
             tags['epg'] = elem['hostname']
             command = f'epg pgw apn {apn} statistics'
-            sfp = net_connect.send_command(command, use_ttp=True, ttp_template="ttp_template\statstics2.ttp")
+            sfp = net_connect.send_command(command, use_ttp=True, ttp_template="ttp_template/statstics2.ttp")
             for d in sfp[0]:
                 down = 0
                 up = 0

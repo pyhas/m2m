@@ -15,7 +15,7 @@ def getapnlist(elem):
         password="Eric@2020",
     )
     com = 'show running-config | include apn'
-    command = net_connect.send_command(com, use_ttp=True, ttp_template="ttp_template\\apn_list.ttp")
+    command = net_connect.send_command(com, use_ttp=True, ttp_template="ttp_template/apn_list.ttp")
     my_dict = {}
     my_dict['hostname'] = elem['hostname']
     my_dict['ip'] = elem['ip']
